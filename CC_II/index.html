@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive layout</title>
+  <style type="text/css">
+    body {
+      display: grid;
+      margin: 0 auto;
+    }
+
+    .container {
+      background-color: lightgoldenrodyellow;
+      box-sizing: border-box;
+      display: grid;
+      grid-column-gap: 16px;
+      grid-row-gap: 16px;
+      margin: 0 auto;
+      max-width: 1500px;
+      padding: 16px 16px 16px 16px;
+    }
+
+    .block {
+      border-radius: 10px;
+      box-sizing: border-box;
+      min-width: 300px;
+      padding: 10px;
+    }
+
+    .odd {
+      background-color: lightgray;
+      border: 1px solid gray;
+    }
+
+    .even {
+      background-color: lightskyblue;
+      border: 1px solid blue;
+    }
+
+    @media (min-width: 1280px) {
+      .item-a {
+        grid-column: 1/4;
+      }
+
+      .item-b {
+        grid-column: 4/7;
+      }
+
+      .item-c {
+        grid-column: 7/10;
+      }
+
+      .item-d {
+        grid-column: 10/13;
+      }
+
+      .item-e {
+        grid-column: 1/5;
+      }
+
+      .item-f {
+        grid-column: 5/9;
+      }
+
+      .item-g {
+        grid-column: 9/13;
+      }
+    }
+
+    @media (max-width: 1279px) {
+      .item-g {
+        grid-column: 1/4;
+      }
+    }
+
+    @media (max-width: 1199px) {
+      .odd {
+        grid-column: 1;
+      }
+
+      .even {
+        grid-column: 2;
+      }
+
+      .item-g {
+        grid-column: 1/3;
+      }
+    }
+
+    @media (max-width: 899px) {
+      .block {
+        grid-column: 1;
+      }
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container">
+  <div class="block odd item-a">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras varius hendrerit magna quis commodo. Sed cursus sit
+    amet sem sed feugiat. Fusce felis ante, hendrerit in dapibus id, blandit a turpis. Fusce dolor turpis, scelerisque a
+    sodales sit amet, tempus non neque. In quis feugiat velit. Morbi tempus metus sit amet dui faucibus fringilla.
+  </div>
+  <div class="block even item-b">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras varius hendrerit magna quis commodo. Sed cursus sit
+    amet sem sed feugiat. Fusce felis ante, hendrerit in dapibus id, blandit a turpis. Fusce dolor turpis, scelerisque a
+    sodales sit amet, tempus non neque. In quis feugiat velit. Morbi tempus metus sit amet dui faucibus fringilla.
+  </div>
+  <div class="block odd item-c">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras varius hendrerit magna quis commodo. Sed cursus sit
+    amet sem sed feugiat. Fusce felis ante, hendrerit in dapibus id, blandit a turpis. Fusce dolor turpis, scelerisque a
+    sodales sit amet, tempus non neque. In quis feugiat velit. Morbi tempus metus sit amet dui faucibus fringilla.
+  </div>
+  <div class="block even item-d">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras varius hendrerit magna quis commodo. Sed cursus sit
+    amet sem sed feugiat. Fusce felis ante, hendrerit in dapibus id, blandit a turpis. Fusce dolor turpis, scelerisque a
+    sodales sit amet, tempus non neque. In quis feugiat velit. Morbi tempus metus sit amet dui faucibus fringilla.
+  </div>
+  <div class="block odd item-e">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras varius hendrerit magna quis commodo. Sed cursus sit
+    amet sem sed feugiat. Fusce felis ante, hendrerit in dapibus id, blandit a turpis. Fusce dolor turpis, scelerisque a
+    sodales sit amet, tempus non neque. In quis feugiat velit. Morbi tempus metus sit amet dui faucibus fringilla.
+  </div>
+  <div class="block even item-f">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras varius hendrerit magna quis commodo. Sed cursus sit
+    amet sem sed feugiat. Fusce felis ante, hendrerit in dapibus id, blandit a turpis. Fusce dolor turpis, scelerisque a
+    sodales sit amet, tempus non neque. In quis feugiat velit. Morbi tempus metus sit amet dui faucibus fringilla.
+  </div>
+  <div class="block odd item-g">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras varius hendrerit magna quis commodo. Sed cursus sit
+    amet sem sed feugiat. Fusce felis ante, hendrerit in dapibus id, blandit a turpis. Fusce dolor turpis, scelerisque a
+    sodales sit amet, tempus non neque. In quis feugiat velit. Morbi tempus metus sit amet dui faucibus fringilla.
+  </div>
+</div>
+</body>
+</html>
