@@ -141,7 +141,7 @@ describe('getAverage', () => {
         averageVisits: 44.75,
       },
       Saturday: {
-        averageVisits: 57,
+        averageVisits: 71.25,
       },
       Sunday: {
         averageVisits: 53.5,

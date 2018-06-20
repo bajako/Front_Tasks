@@ -1,14 +1,15 @@
-const findDuplicates = (timePeriod) => {
-  const cache = {};
-  const results = [];
-  for (let i = 0, len = timePeriod.length; i < len; i++) {
-    if (cache[timePeriod[i].date] === true) {
-      results.push(timePeriod[i]);
-    } else {
-      cache[timePeriod[i].date] = true;
+const eraseDuplicate = (timePeriod) => {
+  let seen = {};
+  let noDuplicates = [];
+  let j = 0;
+  for (let i = 0; i < timePeriod.length; i++) {
+    let item = timePeriod[i];
+    if (seen[item.date] !== 1) {
+      seen[item.date] = 1;
+      noDuplicates[j++] = item;
     }
   }
-  return results;
+  return noDuplicates;
 };
 
 const getTimePeriodAverage = (timePeriod) => {
@@ -17,7 +18,7 @@ const getTimePeriodAverage = (timePeriod) => {
   }
   else {
     const timePeriodVisits = timePeriod.reduce((a, b) => ({visits: a.visits + b.visits}));
-    return timePeriodVisits.visits / (timePeriod.length - findDuplicates(timePeriod).length) ;
+    return timePeriodVisits.visits / eraseDuplicate(timePeriod).length;
   }
 };
 
@@ -26,9 +27,11 @@ const getWeekDaysAverageOfTimePeriod = (timePeriod, dayOfWeek) => {
     return 0
   }
   else {
+    const timePeriodWithNoDuplicates = eraseDuplicate(timePeriod);
     const days = timePeriod.filter(elem => elem.date.getDay() === dayOfWeek);
+    const daysWithNoDuplicates = timePeriodWithNoDuplicates.filter(elem => elem.date.getDay() === dayOfWeek);
     const dayOfWeekSum = days.reduce((a, b) => ({visits: a.visits + b.visits}));
-    return dayOfWeekSum.visits / days.length;
+    return dayOfWeekSum.visits / daysWithNoDuplicates.length;
   }
 };
 
